@@ -1,0 +1,15 @@
+# # Hyperledger Fabric simulation scripts
+# deploy-chaincode.sh
+# setup-network2.sh
+
+
+
+# Generated artifacts
+crypto-config/
+channel-artifacts/
+
+# Binary/tar files
+*.tar.gz
+
+# Node.js
+node_modules/

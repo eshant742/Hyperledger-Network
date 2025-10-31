@@ -1,0 +1,58 @@
+# ---------------------------------------------------------------------------
+# "crypto-config.yaml" - UPDATED WITH IP ADDRESS SANS
+# ---------------------------------------------------------------------------
+OrdererOrgs:
+  - Name: Orderer
+    Domain: example.com
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: orderer
+        # --- ADDED SANS BLOCK TO INCLUDE IP ADDRESS ---
+        SANS:
+          - localhost
+          - 127.0.0.1
+          - orderer.example.com
+          - 10.116.17.64    # <-- Orderer IP
+
+PeerOrgs:
+  - Name: Org1MSP
+    Domain: org1.example.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+      # --- ADDED SANS BLOCK TO INCLUDE IP ADDRESS ---
+      SANS:
+        - localhost
+        - 127.0.0.1
+        - peer0.org1.example.com
+        - 10.116.17.141   # <-- Org1 Peer IP
+    Users:
+      Count: 1
+
+  - Name: Org2MSP
+    Domain: org2.example.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+      # --- ADDED SANS BLOCK TO INCLUDE IP ADDRESS ---
+      SANS:
+        - localhost
+        - 127.0.0.1
+        - peer0.org2.example.com
+        - 10.116.17.169   # <-- Org2 Peer IP
+    Users:
+      Count: 1
+
+  - Name: Org3MSP
+    Domain: org3.example.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+      # --- ADDED SANS BLOCK TO INCLUDE IP ADDRESS ---
+      SANS:
+        - localhost
+        - 127.0.0.1
+        - peer0.org3.example.com
+        - 10.116.17.26    # <-- Org3 Peer IP
+    Users:
+      Count: 1
